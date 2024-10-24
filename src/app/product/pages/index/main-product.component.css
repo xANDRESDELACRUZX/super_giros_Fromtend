@@ -1,0 +1,33 @@
+/* Tabla css */
+.service-item {
+  display: flex;
+  margin-bottom: 80px;
+border-color: grey;
+}
+
+.service-item-content {
+  -webkit-box-flex: 1;
+flex: 1;}
+
+.pdi-times {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+color: #5e6467;
+}
+
+.pdi-times tbody tr:nth-child(2n+1) td {
+  background: #fafafa;
+}
+
+.pdi-times thead {
+color: #ca0a00;
+font-weight: bold;
+}
+
+.pdi-times tbody tr td {
+  border-left: 1px solid #e5e9ec;
+  border-bottom: 1px solid #e5e9ec;
+}
+.pdi-times td, .pdi-times th {
+  padding: 16px;}

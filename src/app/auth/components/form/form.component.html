@@ -1,0 +1,62 @@
+<div class="wrapper">
+  <div class="container">
+    <div class="col-left">
+      <div class="login-form">
+        <h2 *ngIf="!pageRegister; else registerTitle">Login</h2>
+        <ng-template #registerTitle>
+          <h2>Register</h2>
+        </ng-template>
+
+        <form (ngSubmit)="onCurrentForm()" #login="ngForm">
+
+          <p *ngIf="pageRegister">
+            <input type="text"
+            [(ngModel)]="User.nombres"
+              name="nombres"
+             placeholder="Nombres" required>
+          </p>
+          <p *ngIf="pageRegister">
+            <input type="text"
+            [(ngModel)]="User.apellidos"
+            name="apellidos"
+            placeholder="Apellidos" required>
+          </p>
+          <p>
+            <input type="text"
+            [(ngModel)]="User.email"
+            name="email"
+            placeholder="Email" required>
+          </p>
+          <p>
+            <input type="password"
+            [(ngModel)]="User.password"
+            name="password"
+             placeholder="Contraseña" required>
+          </p>
+          <!--btns-->
+          <p *ngIf="!pageRegister;else registerBtn">
+            <input class="btn" type="submit" value="Ingresa" />
+          </p>
+
+          <ng-template #registerBtn>
+          <p>
+            <input class="btn" type="submit" value="Registrate" />
+          </p>
+        </ng-template>
+          <!-- login / register-->
+          <p *ngIf="!pageRegister else registerLink">
+            <button type="button" (click)="onActivatePageRegister(true)">No tienes cuenta? <strong>Registrate</strong></button>
+          </p>
+          <ng-template #registerLink>
+          <p>
+            <button type="button" (click)="onActivatePageRegister(false)">ya tienes cuenta? <strong>Inicia sesion</strong></button>
+          </p>
+        </ng-template>
+        </form>
+
+      </div>
+
+
+  </div>
+
+</div>

@@ -1,0 +1,46 @@
+<div class="wrapper">
+  <a href="producto/lista" class="bg-blue-500 text-white  py-2 px-4 rounded hover:bg-blue-600">
+    <i class="fa-solid fa-home text-center"></i> volver
+  </a>
+  <div class="container">
+    <div class="col-left">
+      <div class="login-form">
+        <h2 *ngIf="!editar; else editarTitle">Crear producto</h2>
+        <ng-template #editarTitle>
+          <h2>Editar Producto</h2>
+        </ng-template>
+
+         <form (ngSubmit)="validatedForm()" #login="ngForm">
+
+          <p>
+            <input type="text"
+            [(ngModel)]="product.nombre"
+              name="nombre"
+             placeholder="Nombre producto" required>
+          </p>
+          <p >
+            <input type="number"
+            [(ngModel)]="product.precio"
+            name="precio"
+            placeholder="precio" required>
+          </p>
+
+          <!--btns-->
+          <p *ngIf="!editar ;else editarBtn">
+            <input class="btn" type="submit" value="Crear" />
+          </p>
+
+          <ng-template #editarBtn>
+          <p>
+            <input class="btn" type="submit" value="Editar" />
+          </p>
+        </ng-template>
+          <!-- login / register-->
+        </form>
+
+      </div>
+
+
+  </div>
+
+</div>
